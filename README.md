@@ -2,7 +2,25 @@
 ## 一些提醒：某些人嘴脸不要那么难看，直接拿我原版的程序去倒卖
 # QQ经典农场 挂机脚本
 
-基于 Node.js 的 QQ/微信 经典农场小程序自动化挂机脚本。通过分析小程序 WebSocket 通信协议（Protocol Buffers），实现全自动农场管理。
+QQ/微信 经典农场小程序自动化挂机脚本。通过分析小程序 WebSocket 通信协议（Protocol Buffers），实现全自动农场管理。
+
+## 版本说明
+
+本仓库现在提供两个版本：
+
+### 📦 Node.js 版本（原版）
+- 位置: 项目根目录
+- 基于 Node.js + WebSocket + Protobuf
+- 功能完整，稳定运行
+- [查看详细文档](#安装)
+
+### 🐍 Python 版本（新增）
+- 位置: `python_version/` 目录
+- 采用面向对象设计，模块化架构
+- 功能模块清晰封装，易于维护和扩展
+- [查看 Python 版本文档](python_version/README.md)
+- [查看架构设计文档](python_version/ARCHITECTURE.md)
+
 本脚本基于ai制作，必然有一定的bug，遇到了建议自己克服一下，后续不一定会更新了
 
 ## 功能特性
@@ -34,15 +52,17 @@
 - **[PB 解码工具](#pb-解码工具)** — 内置 Protobuf 数据解码器，方便调试分析
 - **[经验分析工具](#经验分析工具)** — 分析作物经验效率，计算最优种植策略
 
-## 安装
+## 安装 (Node.js 版本)
 
 ```bash
-git clone https://github.com/linguo2625469/qq-farm-bot.git
+git clone https://github.com/jiongjiongJOJO/qq-farm-bot.git
 cd qq-farm-bot
 npm install
 ```
 
-## 使用
+**Python 版本安装**: 请查看 [python_version/README.md](python_version/README.md)
+
+## 使用 (Node.js 版本)
 
 ### 获取登录 Code
 
