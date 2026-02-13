@@ -33,7 +33,8 @@ class ExpCalculator:
         
         if os.path.exists(data_file):
             with open(data_file, 'r', encoding='utf-8') as f:
-                self.seed_data = json.load(f)
+                data = json.load(f)
+                self.seed_data = data.get('rows', [])
         
         self._loaded = True
     
@@ -107,7 +108,7 @@ class ExpCalculator:
         # Filter seeds available for the level
         available_seeds = [
             seed for seed in self.seed_data
-            if seed.get('RequiredLevel', 999) <= level
+            if seed.get('requiredLevel', 999) <= level
         ]
         
         if not available_seeds:
@@ -116,8 +117,8 @@ class ExpCalculator:
         # Calculate exp yield for each seed
         seed_yields = []
         for seed in available_seeds:
-            exp = seed.get('Exp', 0)
-            grow_time = seed.get('GrowTime', 0)
+            exp = seed.get('exp', 0)
+            grow_time = seed.get('growTimeSec', 0)
             
             if grow_time > 0:
                 yield_value = self.calculate_exp_yield(exp, grow_time, lands, True)
